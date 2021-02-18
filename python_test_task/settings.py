@@ -129,4 +129,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get("EMAIL")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
-HOST = "127.0.0.1:8000/"
+HOST = "python-magic-link.herokuapp.com"
