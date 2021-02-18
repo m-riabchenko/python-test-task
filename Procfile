@@ -1,1 +1,1 @@
-web: gunicorn python_test_task.wsgi
+web: gunicorn python_test_task.wsgi --preload
