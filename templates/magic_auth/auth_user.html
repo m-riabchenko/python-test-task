@@ -1,0 +1,14 @@
+{% extends 'magic_auth/base.html' %}
+
+{% block title %} Auth {% endblock %}
+{% block content %}
+    <div class="mx-auto mt-5" style="width: 450px;">
+        {% if user %}
+            <h3>You are authenticated! </h3>
+            <br>
+            <h5> link checked {{ user.count_link }} times </h5>
+            <h5> total user checked {{ user.count_total }} times </h5>
+            <h5> your email - {{ user.email }} </h5>
+            </div>
+        {% endif %}
+{% endblock %}

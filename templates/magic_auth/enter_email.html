@@ -1,0 +1,34 @@
+{% extends 'magic_auth/base.html' %}
+
+{% block title %} Enter email {% endblock %}
+{% block content %}
+    <div class="mx-auto mt-5" style="width: 300px;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3 ">
+                {% if message %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+
+                {% endif %}
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                {% if msg %}
+                    <div class="alert alert-warning" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endif %}
+                <label for="exampleInputEmail1" class="form-label">Enter your email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                       aria-describedby="emailHelp" name="email">
+                <small id="emailHelp" class="form-text text-danger">{{ error }}</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Send me magic link</button>
+        </form>
+
+    </div>
+{% endblock %}
