@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "os.environ.get('SECRET-KEY')"
+SECRET_KEY = os.environ.get('SECRET-KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'python_test_task.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd1aova20rr11q4',
-        'USER': 'jrrfkoasknqyfl',
-        'PASSWORD': '678394a57660bb675f2d729fc541418a47f196c8961f1fcd0fd0eb885c82ed17',
-        'HOST': 'ec2-52-50-171-4.eu-west-1.compute.amazonaws.com',
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
         'PORT': '5432',
     }
 }
@@ -130,9 +130,7 @@ AUTH_USER_MODEL = 'magic_auth.CustomUser'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "00mycola00@gmail.com"
-EMAIL_HOST_PASSWORD = "ydqftwknkciiogrq"
-# EMAIL_HOST_USER = os.environ.get("EMAIL")
-# EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_HOST_USER = os.environ.get("EMAIL")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 HOST = "python-magic-link.herokuapp.com"
