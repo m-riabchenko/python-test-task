@@ -57,5 +57,5 @@ def auth(request, magic_token):
         "email": user.email
     }}
 
-    return render(request, 'magic_auth/auth_user.html', context)
+    return render(request, '/magic_auth/auth_user.html', context)
 
