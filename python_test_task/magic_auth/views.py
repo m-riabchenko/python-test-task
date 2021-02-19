@@ -27,7 +27,7 @@ def enter_email(request):
             user.save()
             success = send_mail(
                 subject='Magic link token',
-                message='Click on ' + HOST + 'auth/' + token,
+                message='Click on ' + HOST + '/auth/' + token,
                 from_email="mriabchenko11@gmail.com",
                 recipient_list=[email],
                 fail_silently=False,
@@ -57,5 +57,5 @@ def auth(request, magic_token):
         "email": user.email
     }}
 
-    return render(request, '/magic_auth/auth_user.html', context)
+    return render(request, 'magic_auth/auth_user.html', context)
 
